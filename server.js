@@ -1,10 +1,16 @@
-const express = require('express')
-const port = 3000;
-const path = require('path')
+const express = require('express');
+const path = require('path');
 
-const app = express()
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname+'/index.html'));
-})
+const app = express();
+const PORT = process.env.PORT || 2007;
 
-app.listen(port)
+// Middleware untuk file statis
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Rute utama
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Ekspor aplikasi untuk Vercel
+module.exports = app;
