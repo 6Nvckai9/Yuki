@@ -2,15 +2,11 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 2007;
 
-// Middleware untuk file statis
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Rute utama
+// Endpoint utama untuk menyajikan file HTML
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Ekspor aplikasi untuk Vercel
+// Ekspor aplikasi agar kompatibel dengan Vercel
 module.exports = app;
