@@ -1,13 +1,11 @@
-/* Root Variables */
 :root {
     --black: #333;
     --moreBlack: #131313;
     --white: #fdfdfd;
     --gold: #a97b4c;
-    --gray: #cccccc;
+    --p: #cccccc;
 }
 
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -15,131 +13,103 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--moreBlack);
+    background-color: #181818;
     color: var(--white);
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-}
-
-/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
+    padding: 15px 40px;
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 9999;
-    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-    font-size: 1.5rem;
+header .logo h1 {
+    font-size: 1.8rem;
     color: var(--gold);
+    letter-spacing: 1px;
 }
 
-header ul {
+header nav ul {
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
-header ul li a {
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
     color: var(--white);
-    transition: color 0.3s;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
 }
 
-header ul li a:hover {
+header nav ul li a:hover {
     color: var(--gold);
 }
 
-/* Section - Home */
+/* HOME SECTION */
 .sectionHome {
     height: 100vh;
-    background: url('/web/SMKN5KIEV/assets/img/home2.jpeg') center/cover no-repeat;
+    background-image: url(/web/SMKN5KIEV/assets/img/home2.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    text-align: center;
+    color: var(--white);
     position: relative;
 }
 
 .sectionHome::before {
-    content: '';
+    content: "";
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .homeContainer {
     position: relative;
+    margin: 0 200px;
     z-index: 2;
-    max-width: 50%;
 }
 
-.homeContainer h3 {
-    font-size: 1.5rem;
-    color: var(--gray);
-    margin-bottom: 10px;
-}
-
-.homeContainer h1 {
+.homeTitle h1 {
     font-size: 3rem;
-    color: var(--white);
-    margin-bottom: 20px;
+    width: 40vw;
+    letter-spacing: 2px;
 }
 
-.homeContainer h1 span {
-    color: var(--gold);
+.homeTitle h3, .homeTitle p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
 }
 
-.homeContainer p {
-    margin-bottom: 20px;
-}
-
-.homeContainer button {
-    padding: 10px 20px;
-    background: var(--gold);
-    color: var(--white);
+.homeTitle button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: var(--gold);
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
-}
-
-.homeContainer button:hover {
-    background: #c6955e;
-}
-
-/* Sections - About, Leaderboard, Staff */
-.sectionAbout, .sectionLeaderboard, .sectionStaff {
-    padding: 50px 20px;
     text-align: center;
 }
 
-.aboutContent, .leaderboardContent, .staffContent {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
-    background: var(--black);
-    color: var(--gray);
+.homeTitle button a {
+    text-decoration: none;
+    color: var(--white);
 }
